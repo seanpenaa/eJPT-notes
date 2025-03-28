@@ -1,9 +1,7 @@
 /var/www
 
 /etc/passwd
-
 /etc/shadow
-
 /etc/aliases
 /etc/anacrontab
 /etc/apache2/apache2.conf
