@@ -1,0 +1,3 @@
+```
+crackmapexec smb <IP/range>
+```
