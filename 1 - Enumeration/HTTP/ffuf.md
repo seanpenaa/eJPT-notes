@@ -33,6 +33,11 @@ ffuf -w valid_usernames.txt:W1,/usr/share/seclists/Passwords/Common-Credentials/
 ffuf -w /usr/share/wordlists/seclists/Fuzzing/LFI/LFI-Jhaddix.txt -u http://<RHOST>/admin../admin_staging/index.php?page=FUZZ -fs 15349
 ```
 
+# VHOST enumeration
+```
+ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb'
+```
+
 # Extension Fuzzing
 ```
 ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt -u http://83.136.252.66:47689/blog/FUZZ.php
