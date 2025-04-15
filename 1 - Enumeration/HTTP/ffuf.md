@@ -16,6 +16,7 @@ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.
 # Recursion
 ```
 ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -u http://<RHOST>/cd/basic/FUZZ -recursion
+ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt -u http://83.136.252.66:47689/FUZZ -e .php -recursion -recursion-depth 1 -ic
 ```
 
 # Brute Forcing
@@ -30,4 +31,9 @@ ffuf -w valid_usernames.txt:W1,/usr/share/seclists/Passwords/Common-Credentials/
 # Local file inclusion
 ```
 ffuf -w /usr/share/wordlists/seclists/Fuzzing/LFI/LFI-Jhaddix.txt -u http://<RHOST>/admin../admin_staging/index.php?page=FUZZ -fs 15349
+```
+
+# Extension Fuzzing
+```
+ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt -u http://83.136.252.66:47689/blog/FUZZ.php
 ```
