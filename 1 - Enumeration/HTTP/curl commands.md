@@ -52,4 +52,7 @@ curl 192.45.178.3/uploads/ --upload-file hello.txt
 ```
 curl -XDELETE 192.45.178.3/uploads/hello.txt 
 ```
-
+# curl with POST
+```
+curl http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=key' -H 'Content-Type: application/x-www-form-urlencoded'
+```
