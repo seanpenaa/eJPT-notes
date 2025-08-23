@@ -39,3 +39,8 @@ txt,bak,php,html,js,asp,aspx
 ```
 png,jpg,jpeg,gif,bmp
 ```
+
+# APIs:
+```
+/usr/share/wordlists/seclists/Discovery/Web-Content/api
+```
