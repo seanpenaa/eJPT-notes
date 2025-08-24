@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Generated through ChatGPT with the prompt: do you have access to all the tools that I had to download over the past 2 week's work of conversations for linux? this could include packages such as volatility, 
+#  or any python libraries. I'm trying to compile a script to run and download for every new installation of kali linux whenever i have to fix it by redownloading
 # Kali bootstrap for CTF/pwn/forensics/web work
 # - PEP 668 safe (no system pip upgrades)
 # - Sublime Text repo + install
