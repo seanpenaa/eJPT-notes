@@ -1,0 +1,137 @@
+msf exploit(multi/handler) > search type:post platform:linux
+
+Matching Modules
+================
+
+   #    Name                                                          Disclosure Date  Rank       Check  Description
+   -    ----                                                          ---------------  ----       -----  -----------
+   0    post/linux/manage/adduser                                     .                normal     No     Add a new user to the system
+   1    post/linux/gather/ansible                                     .                normal     No     Ansible Config Gather
+   2    post/linux/gather/ansible_playbook_error_message_file_reader  .                normal     No     Ansible Playbook Error Message File Reader
+   3    post/linux/gather/apache_nifi_credentials                     .                normal     No     Apache NiFi Credentials Gather
+   4    post/multi/gather/azure_cli_creds                             .                normal     No     Azure CLI Credentials Gatherer
+   5    post/multi/manage/fileshare                                   .                normal     No     Browse the session filesystem in a Web Browser
+   6    post/linux/busybox/set_dmz                                    .                normal     No     BusyBox DMZ Configuration
+   7    post/linux/busybox/set_dns                                    .                normal     No     BusyBox DNS Configuration
+   8    post/linux/busybox/wget_exec                                  .                normal     No     BusyBox Download and Execute
+   9    post/linux/busybox/enum_connections                           .                normal     No     BusyBox Enumerate Connections
+   10   post/linux/busybox/enum_hosts                                 .                normal     No     BusyBox Enumerate Host Names
+   11   post/linux/busybox/jailbreak                                  .                normal     No     BusyBox Jailbreak
+   12   post/linux/busybox/ping_net                                   .                normal     No     BusyBox Ping Network Enumeration
+   13   post/linux/busybox/smb_share_root                             .                normal     No     BusyBox SMB Sharing
+   14   post/multi/escalate/cups_root_file_read                       2012-11-20       normal     No     CUPS 1.6.1 Root File Read
+   15   post/multi/gather/chrome_cookies                              .                normal     No     Chrome Gather Cookies
+   16   post/multi/sap/smdagent_get_properties                        .                normal     No     Diagnostics Agent in Solution Manager, stores unencrypted credentials for Solution Manager server
+   17   post/linux/manage/disable_clamav                              .                normal     No     Disable ClamAV
+   18   post/linux/gather/f5_loot_mcp                                 2022-11-16       normal     No     F5 Big-IP Gather Information from MCP Datastore
+   19   post/linux/gather/enum_commands                               .                normal     No     Gather Available Shell Commands
+   20   post/multi/gather/dbeaver                                     .                normal     No     Gather Dbeaver Passwords
+   21   post/multi/gather/grub_creds                                  .                normal     No     Gather GRUB Password
+   22   post/multi/gather/minio_client                                .                normal     No     Gather MinIO Client Key
+   23   post/multi/gather/tomcat_gather                               .                normal     No     Gather Tomcat Credentials
+   24   post/multi/gather/wowza_streaming_engine_creds                .                normal     No     Gather Wowza Streaming Engine Credentials
+   25   post/linux/gather/ecryptfs_creds                              .                normal     No     Gather eCryptfs Metadata
+   26   post/multi/gather/electerm                                    .                normal     No     Gather electerm Passwords
+   27   post/multi/recon/multiport_egress_traffic                     .                normal     No     Generate TCP/UDP Outbound Traffic On Multiple Ports
+   28   post/linux/manage/geutebruck_post_exp                         .                normal     No     Geutebruck Camera Deface
+   29     \_ action: CHANGE_IMAGE                                     .                .          .      Display an arbitrary image instead of the video stream
+   30     \_ action: FREEZE_CAMERA                                    .                .          .      Freeze the camera and display the last image taken from the video stream
+   31     \_ action: RESUME_STREAM                                    .                .          .      Resume the camera's video stream and display the current live feed
+   32   post/linux/gather/gnome_keyring_dump                          .                normal     No     Gnome-Keyring Dump
+   33   post/linux/gather/haserl_read                                 .                normal     No     Haserl Arbitrary File Reader
+   34   post/linux/manage/iptables_removal                            .                normal     No     IPTABLES rules removal
+   35   post/multi/gather/jboss_gather                                .                normal     No     JBoss Credential Collector
+   36   post/multi/gather/jenkins_gather                              .                normal     No     Jenkins Credential Collector
+   37   post/multi/gather/lastpass_creds                              .                normal     No     LastPass Vault Decryptor
+   38   post/linux/gather/enum_containers                             .                normal     No     Linux Container Enumeration
+   39   post/linux/dos/xen_420_dos                                    .                normal     No     Linux DoS Xen 4.2.0 2012-5525
+   40   post/linux/gather/enum_configs                                .                normal     No     Linux Gather Configurations
+   41   post/linux/gather/checkcontainer                              .                normal     No     Linux Gather Container Detection
+   42   post/linux/gather/hashdump                                    .                normal     No     Linux Gather Dump Password Hashes for Linux Systems
+   43   post/linux/gather/gnome_commander_creds                       .                normal     No     Linux Gather Gnome-Commander Creds
+   44   post/multi/gather/enum_hexchat                                .                normal     No     Linux Gather HexChat/XChat Enumeration
+   45     \_ action: ALL                                              .                .          .      Collect both the configs and chat logs
+   46     \_ action: CHATS                                            .                .          .      Collect chat logs with a pattern
+   47     \_ action: CONFIGS                                          .                .          .      Collect config files
+   48   post/linux/gather/manageengine_password_manager_creds         .                normal     No     Linux Gather ManageEngine Password Manager Pro Password Extractor
+   49   post/linux/gather/enum_network                                .                normal     No     Linux Gather Network Information
+   50   post/linux/gather/enum_psk                                    .                normal     No     Linux Gather NetworkManager 802-11-Wireless-Security Credentials
+   51   post/linux/gather/pptpd_chap_secrets                          .                normal     No     Linux Gather PPTP VPN chap-secrets Credentials
+   52   post/linux/gather/enum_protections                            .                normal     No     Linux Gather Protection Enumeration
+   53   post/linux/gather/mount_cifs_creds                            .                normal     No     Linux Gather Saved mount.cifs/mount.smbfs Credentials
+   54   post/linux/gather/enum_system                                 .                normal     No     Linux Gather System and User Information
+   55   post/linux/gather/tor_hiddenservices                          .                normal     No     Linux Gather TOR Hidden Services
+   56   post/linux/gather/enum_users_history                          .                normal     No     Linux Gather User History
+   57   post/linux/gather/checkvm                                     .                normal     No     Linux Gather Virtual Environment Detection
+   58   post/linux/manage/download_exec                               .                normal     No     Linux Manage Download and Execute
+   59   post/multi/gather/memory_search                               .                normal     No     Memory Search
+   60   post/linux/gather/mimipenguin                                 2018-05-23       normal     No     MimiPenguin
+   61   post/multi/escalate/metasploit_pcaplog                        2012-07-16       manual     No     Multi Escalate Metasploit pcap_log Local Privilege Escalation
+   62   post/multi/gather/dns_bruteforce                              .                normal     No     Multi Gather DNS Forward Lookup Bruteforce
+   63   post/multi/gather/dns_reverse_lookup                          .                normal     No     Multi Gather DNS Reverse Lookup Scan
+   64   post/multi/gather/dns_srv_lookup                              .                normal     No     Multi Gather DNS Service Record Lookup Scan
+   65   post/multi/gather/dbvis_enum                                  .                normal     No     Multi Gather DbVisualizer Connections Settings
+   66   post/multi/gather/docker_creds                                .                normal     No     Multi Gather Docker Credentials Collection
+   67   post/multi/gather/filezilla_client_cred                       .                normal     No     Multi Gather FileZilla FTP Client Credential Collection
+   68   post/multi/gather/firefox_creds                               .                normal     No     Multi Gather Firefox Signon Credential Collection
+   69   post/multi/gather/env                                         .                normal     No     Multi Gather Generic Operating System Environment Settings
+   70   post/multi/gather/gpg_creds                                   .                normal     No     Multi Gather GnuPG Credentials Collection
+   71   post/multi/gather/irssi_creds                                 .                normal     No     Multi Gather IRSSI IRC Password(s)
+   72   post/multi/gather/check_malware                               .                normal     No     Multi Gather Malware Verifier
+   73   post/multi/gather/maven_creds                                 .                normal     No     Multi Gather Maven Credentials Collection
+   74   post/multi/gather/thunderbird_creds                           .                normal     No     Multi Gather Mozilla Thunderbird Signon Credential Collection
+   75   post/multi/gather/ssh_creds                                   .                normal     No     Multi Gather OpenSSH PKI Credentials Collection
+   76   post/multi/gather/pidgin_cred                                 .                normal     No     Multi Gather Pidgin Instant Messenger Credential Collection
+   77   post/multi/gather/ping_sweep                                  .                normal     No     Multi Gather Ping Sweep
+   78   post/multi/gather/rubygems_api_key                            .                normal     No     Multi Gather RubyGems API Key
+   79   post/multi/gather/multi_command                               .                normal     No     Multi Gather Run Shell Command Resource File
+   80   post/multi/gather/ubiquiti_unifi_backup                       .                normal     No     Multi Gather Ubiquiti UniFi Controller Backup
+   81   post/multi/gather/find_vmx                                    .                normal     No     Multi Gather VMWare VM Identification
+   82   post/multi/gather/enum_vbox                                   .                normal     No     Multi Gather VirtualBox VM Enumeration
+   83   post/multi/gather/pgpass_creds                                .                normal     No     Multi Gather pgpass Credentials
+   84   post/multi/general/close                                      .                normal     No     Multi Generic Operating System Session Close
+   85   post/multi/general/execute                                    .                normal     No     Multi Generic Operating System Session Command Execution
+   86   post/multi/manage/dbvis_add_db_admin                          .                normal     No     Multi Manage DbVisualizer Add Db Admin
+   87   post/multi/manage/dbvis_query                                 .                normal     No     Multi Manage DbVisualizer Query
+   88   post/multi/manage/zip                                         .                normal     No     Multi Manage File Compressor
+   89   post/multi/manage/multi_post                                  .                normal     No     Multi Manage Post Module Macro Execution
+   90   post/multi/manage/record_mic                                  .                normal     No     Multi Manage Record Microphone
+   91   post/multi/manage/set_wallpaper                               .                normal     No     Multi Manage Set Wallpaper
+   92   post/multi/manage/system_session                              .                normal     No     Multi Manage System Remote TCP Shell Session
+   93   post/multi/manage/play_youtube                                .                normal     No     Multi Manage YouTube Broadcast
+   94   post/multi/manage/screenshare                                 .                normal     No     Multi Manage the screen of the target meterpreter session
+   95   post/multi/manage/screensaver                                 .                excellent  No     Multi Manage the screensaver of the target computer
+   96     \_ action: LOCK                                             .                .          .      Lock the current session
+   97     \_ action: START                                            .                .          .      Start the screensaver, may lock the current session
+   98     \_ action: STOP                                             .                .          .      Stop the screensaver, user may be prompted for its password
+   99     \_ action: UNLOCK                                           .                .          .      Unlock the current session
+   100  post/multi/gather/peass                                       .                normal     No     Multi PEASS launcher
+   101  post/multi/recon/local_exploit_suggester                      .                normal     No     Multi Recon Local Exploit Suggester
+   102  post/multi/gather/enum_software_versions                      .                normal     No     Multiplatform Installed Software Version Enumerator
+   103  post/multi/gather/wlan_geolocate                              .                normal     No     Multiplatform WLAN Enumeration and Geolocation
+   104  post/multi/manage/sudo                                        .                normal     No     Multiple Linux / Unix Post Sudo Upgrade Shell
+   105  post/linux/gather/enum_nagios_xi                              2018-04-17       normal     No     Nagios XI Enumeration
+   106  post/linux/manage/dns_spoofing                                .                normal     No     Native DNS Spoofing module
+   107  post/multi/manage/open                                        .                normal     No     Open a file or URL on the target computer
+   108  post/linux/gather/openvpn_credentials                         .                normal     No     OpenVPN Gather Credentials
+   109  post/linux/gather/phpmyadmin_credsteal                        .                normal     No     Phpmyadmin credentials stealer
+   110  post/linux/manage/pseudo_shell                                .                normal     No     Pseudo-Shell Post-Exploitation Module
+   111  post/linux/gather/puppet                                      .                normal     No     Puppet Config Gather
+   112  post/linux/gather/rancher_audit_log_leak                      2024-02-08       normal     No     Rancher Audit Log Sensitive Information Leak
+   113  post/multi/recon/reverse_lookup                               .                normal     No     Reverse Lookup IP Addresses
+   114  post/linux/manage/sshkey_persistence                          .                excellent  No     SSH Key Persistence
+   115  post/multi/manage/shell_to_meterpreter                        .                normal     No     Shell to Meterpreter Upgrade
+   116  post/multi/recon/sudo_commands                                .                normal     No     Sudo Commands
+   117  post/multi/gather/fetchmailrc_creds                           .                normal     No     UNIX Gather .fetchmailrc Credentials
+   118  post/multi/gather/netrc_creds                                 .                normal     No     UNIX Gather .netrc Credentials
+   119  post/multi/gather/aws_keys                                    .                normal     No     UNIX Gather AWS Keys
+   120  post/multi/gather/unix_cached_ad_hashes                       .                normal     No     UNIX Gather Cached AD Hashes
+   121  post/multi/gather/unix_kerberos_tickets                       .                normal     No     UNIX Gather Kerberos Tickets
+   122  post/multi/gather/remmina_creds                               .                normal     No     UNIX Gather Remmina Credentials
+   123  post/multi/manage/upload_exec                                 .                normal     No     Upload and Execute
+   124  post/linux/gather/vcenter_secrets_dump                        2022-04-15       normal     No     VMware vCenter Secrets Dump
+   125  post/multi/manage/hsts_eraser                                 .                normal     No     Web browsers HSTS entries eraser
+   126  post/multi/general/wall                                       .                normal     No     Write Messages to Users
+
+
+Interact with a module by name or index. For example info 126, use 126 or use post/multi/general/wall
