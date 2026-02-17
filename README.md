@@ -30,9 +30,9 @@ sudo nmap -Pn -sU -sV -p 53 "--script=banner,(dns* or ssl*) and not (brute or br
 nmap -Pn -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oA ${TARGET}_http_script $TARGET
 ```
 
-## SMB (port 139,445)
+## NFS (port 111,2049)
 ```
-nmap -Pn -sV -p 111 "--script=banner,(nfs* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" --script-args=unsafe=1 -oA ${TARGET}_nfs_nmap. $TARGET
+nmap -Pn -sV -p 111,2049 "--script=banner,(nfs* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" --script-args=unsafe=1 -oA ${TARGET}_nfs_nmap. $TARGET
 ```
 
 ## SMB (port 139,445)
