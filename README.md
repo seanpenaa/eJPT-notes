@@ -27,12 +27,17 @@ sudo nmap -Pn -sU -sV -p 53 "--script=banner,(dns* or ssl*) and not (brute or br
 ## HTTP/HTTPS (port 80,443):
 ```
 # Version detection + NSE scripts
-nmap -Pn -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oX ${TARGET}_http_script.xml $TARGET
+nmap -Pn -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oA ${TARGET}_http_script $TARGET
 ```
 
 ## SMB (port 139,445)
 ```
-nmap -Pn -sV -p 445 "--script=banner,(nbstat* or smb* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" --script-args=unsafe=1 -oX ${TARGET}_smb_nmap.xml $TARGET
+nmap -Pn -sV -p 111 "--script=banner,(nfs* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" --script-args=unsafe=1 -oA ${TARGET}_nfs_nmap. $TARGET
+```
+
+## SMB (port 139,445)
+```
+nmap -Pn -sV -p 139,445 "--script=banner,(nbstat* or smb* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" --script-args=unsafe=1 -oA ${TARGET}_smb_nmap $TARGET
 ```
 
 Scan for common vulnerabilities:
@@ -53,7 +58,7 @@ nmap -p 445 --script smb-vuln-ms17-010 -oN "tcp_445_smb_ms17-010.txt" $TARGET
 ## SQL (port 3306)
 ```
 # Version detection + NSE scripts
-nmap -Pn -sV -p 3306 --script="banner,(mysql* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oX "${TARGET}_mysql_nmap.xml" $TARGET
+nmap -Pn -sV -p 3306 --script="banner,(mysql* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oA "${TARGET}_mysql_nmap" $TARGET
 ```
 
 ## IDS/Firewall Evasion
