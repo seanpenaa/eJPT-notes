@@ -55,6 +55,11 @@ nmap -Pn -sV -p 445 --script="smb-vuln-ms08-067" --script-args="unsafe=1" -oN "t
 nmap -p 445 --script smb-vuln-ms17-010 -oN "tcp_445_smb_ms17-010.txt" $TARGET
 ```
 
+## IPMI (port 623) iDRAC, iLO, Supermicro IPMI
+```
+sudo nmap $TARGET -Pn -sV -sU -p623 --script="banner,*ipmi*" --min-rate=3000 -oN "${TARGET}_ipmi_nmap.txt" $TARGET
+``` 
+
 ## SQL (port 3306)
 ```
 # Version detection + NSE scripts
