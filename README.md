@@ -4,6 +4,11 @@
 nmap -p$(nmap -p- --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) -sV -Pn $TARGET -oA ${TARGET}
 ```
 
+## Enumerate UDP ports
+```
+nmap -p$(nmap -p- -sU --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) -sV -Pn -sU $TARGET -oA ${TARGET}
+```
+
 ## FTP (port 21):
 ```
 nmap -Pn -sV -p 21 --script="banner,(ftp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oX "${TARGET}_ftp_nmap.xml" $TARGET
