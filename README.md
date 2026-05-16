@@ -1,7 +1,7 @@
 # NMAP
 ## Enumerate TCP ports
 ```
-nmap -p$(nmap -p- --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) -sV -Pn $TARGET -oA ${TARGET}
+nmap -p$(nmap -p- --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) -sV -Pn --minmn-rate=1000 $TARGET -oA ${TARGET}
 ```
 
 ## Enumerate UDP ports
