@@ -6,7 +6,7 @@ nmap -p$(nmap -p- --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 
 
 ## Enumerate UDP ports
 ```
-nmap -p$(nmap -p- -sU --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) -sV -Pn -sU $TARGET -oA ${TARGET}
+nmap -p$(nmap -p- -sU --min-rate=1000 -T4 $TARGET | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) -sV -Pn --min-rate=1000 -sU $TARGET -oA ${TARGET}
 ```
 
 ## FTP (port 21):
